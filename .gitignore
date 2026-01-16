@@ -115,6 +115,11 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# uv
+.venv/
+uv.lock
+
+# IDE
 .idea/
 source_docs/
 /reports/
