@@ -92,7 +92,10 @@ TABS_FOLDER = _full_path_to('Tabs', 'i')
 CHORDIFY_FOLDER = _full_path_to('ChordifyLabs', 'i')
 
 # Names and folders of MIREX audio ACE results
-MIREX_SUBMISSION_NAMES, MIREX_SUBMISSION_FOLDERS = _get_mirex_submissions(2017)
+try:
+    MIREX_SUBMISSION_NAMES, MIREX_SUBMISSION_FOLDERS = _get_mirex_submissions(2017)
+except (FileNotFoundError, OSError):
+    MIREX_SUBMISSION_NAMES, MIREX_SUBMISSION_FOLDERS = [], []
 
 # We need the sound font for synthesizing MIDI files
 SOUND_FONT_PATH = _full_path_to('FluidR3_GM.sf2', 'i')
